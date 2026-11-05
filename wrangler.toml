@@ -1,0 +1,6 @@
+name = "nyamafresh"
+compatibility_date = "2026-11-01"
+
+[assets]
+directory = "./public"
+# Install the project-local CLI with `npm install -D wrangler`.

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16342a">
+<title>Nyama Fresh Delivery | Kikuyu</title>
+<meta name="description" content="Fresh halal beef and goat, cut for your dish and delivered in Kikuyu. Choose ready-to-cook packs, family boxes or whole and half goat.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Halal meat delivered in Kikuyu | Nyama Fresh">
+<meta property="og:description" content="Fresh halal beef and goat, cut for your dish and delivered to your gate in Kikuyu.">
+<meta property="og:image" content="/og.png">
+<meta property="og:url" content="/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<style>
+.hero-layout,.cuts-layout{display:grid;gap:1.5rem}
+.hero-image{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cuts-image{display:block;width:100%;height:min(28rem,65vh);object-fit:contain;background:#e5e7eb}
+@media(min-width:768px){
+  .hero-layout{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:2rem}
+  .cuts-layout{grid-template-columns:1fr 1fr;align-items:center;gap:2.25rem}
+}
+</style>
+</head>
+<body class="pb-[calc(76px+env(safe-area-inset-bottom,0px))] md:pb-0">
+<header class="border-b border-line py-3.5"><div class="wrap flex items-center justify-between gap-3">
+  <a class="flex items-center gap-2 font-display text-xl font-extrabold no-underline" href="#"><img src="icon-192.png" alt="" width="40" height="40" class="size-10 rounded-xl">Nyama Fresh</a>
+  <a class="btn min-h-11 px-4 py-2.5 text-[.95rem]" href="#order">Order now</a>
+</div></header>
+<main>
+<div class="pb-7 pt-9 md:pb-10 md:pt-16"><div class="wrap hero-layout"><div>
+  <div class="mb-4"><img src="halal-badge.png" alt="Halal certification badge" width="56" height="56" class="size-14"></div>
+  <h1 class="text-[clamp(2.2rem,8.5vw,4.4rem)] font-extrabold tracking-tight">Nyama Fresh.<br>Made easy.</h1>
+  <p class="mb-7 mt-5 max-w-[36em] text-[1.15rem] text-muted">Fresh halal beef and goat, cleaned and cut for your kitchen. Delivered to your doorstep in Kikuyu and nearby neighbourhoods.</p>
+  <div class="flex flex-wrap gap-3">
+    <a class="btn flex-1 basis-[200px] animate-pulse-ring hover:animate-none" href="#order">Choose your meat & order</a>
+    <a id="quickChat" class="btn btn-ghost flex-1 basis-[200px]" href="#">Not sure what to order? Chat with us!</a>
+  </div>
+  <p id="cycleNote" class="mt-4 text-[.95rem] text-muted"></p></div>
+  <img src="beefinbone.webp" alt="Fresh beef cuts arranged on a board with herbs and tomatoes" width="1920" height="1920" fetchpriority="high" decoding="async" class="mt-7 w-full rounded-xl md:mt-0 hero-image">
+</div></div>
+
+<!--section class="pb-4"><div class="wrap grid gap-3 md:grid-cols-2">
+  <div class="seal"><h3 class="font-display text-lg font-extrabold">Halal & inspected</h3><p class="mt-1 text-muted">Every carcass is checked and stamped.</p></div>
+  <div class="seal"><h3 class="font-display text-lg font-extrabold">Weighed before dispatch</h3><p class="mt-1 text-muted">See your pack on the scale before it leaves.</p></div>
+</div></section -->
+
+<section class="py-12"><div class="wrap">
+  <h2 class="h2">Simple to order</h2>
+  <ol class="mt-6 border-t border-line">
+    <li class="grid gap-0.5 border-b border-line py-4 md:grid-cols-[150px_1fr] md:gap-5"><span class="font-display font-extrabold">1. Choose</span><p class="text-muted">Packs, family box or goat.</p></li>
+    <li class="grid gap-0.5 border-b border-line py-4 md:grid-cols-[150px_1fr] md:gap-5"><span class="font-display font-extrabold">2. Confirm</span><p class="text-muted">Get your exact total on WhatsApp.</p></li>
+    <li class="grid gap-0.5 border-b border-line py-4 md:grid-cols-[150px_1fr] md:gap-5"><span class="font-display font-extrabold">3. Pay</span><p class="text-muted">Pay by M-Pesa before dispatch. Goat orders pay a deposit.</p></li>
+    <li class="grid gap-0.5 border-b border-line py-4 md:grid-cols-[150px_1fr] md:gap-5"><span class="font-display font-extrabold">4. Delivered</span><p class="text-muted">We bring it to your gate. Pay the delivery fee to the rider.</p></li>
+  </ol>
+</div></section>
+
+<div id="order" class="bg-board pb-14 pt-12 text-chalk"><div class="wrap">
+  <h2 class="h2">Choose your meat</h2>
+  <p id="priceNote" class="mt-2 max-w-[40em] text-chalk-dim"></p>
+  <div class="mt-5 flex gap-2" role="tablist" id="tabs">
+    <button class="tab" role="tab" id="tab-packs" aria-controls="p-packs" tabindex="0" data-mode="packs" aria-selected="true">Ready-to-cook packs</button>
+    <button class="tab" role="tab" id="tab-box" aria-controls="p-box" tabindex="-1" data-mode="box" aria-selected="false">Weekly family box</button>
+    <button class="tab" role="tab" id="tab-goat" aria-controls="p-goat" tabindex="-1" data-mode="goat" aria-selected="false">Goat</button>
+  </div>
+  <div class="mt-6 grid items-start gap-7 md:grid-cols-[1.1fr_.9fr] md:gap-9">
+    <div class="min-w-0">
+      <div id="p-packs" role="tabpanel" aria-labelledby="tab-packs"><p class="mb-1 text-chalk-dim">Ready to cook. Choose your packs below.</p><div id="cuts"></div></div>
+      <div id="p-box" role="tabpanel" aria-labelledby="tab-box" class="hidden"><p class="mb-3 text-chalk-dim">A convenient selection of family-friendly meat portions, prepared and delivered every week. Choose a box size, tell us what you'd like to swap, and leave the weekly meat shopping to us. </br> Pause or cancel before the order cutoff whenever you need to.</p><div id="boxOpts"></div></div>
+      <div id="p-goat" role="tabpanel" aria-labelledby="tab-goat" class="hidden"><p class="mb-3 text-chalk-dim">Planning a Nyama Choma?</br> Order half or a whole goat, prepared to your preferred cut. Book at least three days ahead, and we'll confirm the final weight and amount before dispatch.</p><div id="goatOpts"></div>
+        <label class="lbl" for="goatCut">How should we cut it?</label><select class="field" id="goatCut"></select></div>
+    </div>
+    <div id="details" class="min-w-0 rounded-xl bg-paper p-5 text-ink">
+      <label class="lbl" for="name">Your name</label><input class="field" id="name" autocomplete="name">
+      <label class="lbl" for="phone">Phone number</label><input class="field" id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07xx xxx xxx">
+      <label class="lbl" for="zone">Where are you?</label><select class="field" id="zone"></select>
+      <label class="lbl" for="area">Estate and gate description</label><input class="field" id="area" autocomplete="street-address" placeholder="e.g. Kidfarmaco, blue gate near the shop">
+      <div id="slotWrap"><label class="lbl" for="slot">Delivery day</label><select class="field" id="slot"></select></div>
+      <div id="dateWrap" class="hidden"><label class="lbl" for="goatDate">Date you need it</label><input class="field" type="date" id="goatDate"></div>
+      <label class="lbl" for="notes">Notes (optional)</label><textarea class="field min-h-[72px] resize-y" id="notes" placeholder="Swaps, how you will cook it, anything to avoid"></textarea>
+      <input id="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute -left-[9999px] size-px">
+      <h3 class="mt-5 border-t border-line pt-3.5 font-display text-lg font-extrabold">Review your order</h3><ul id="summary" class="mt-1.5 list-disc pl-5 text-[.95rem] text-muted"></ul><dl class="mt-3 border-t border-line pt-3.5" aria-live="polite">
+        <div class="flex items-baseline justify-between"><dt>Meat subtotal</dt><dd id="sub">KES 0</dd></div>
+        <div class="mt-1 flex items-baseline justify-between"><dt id="feeLbl">Convenience fee</dt><dd id="convFee">KES 0</dd></div>
+        <div class="mt-2 flex items-baseline justify-between border-t border-line pt-2"><dt id="totLbl">Order total, pay before delivery</dt><dd><strong id="total" class="font-display text-[1.4rem]">KES 0</strong></dd></div>
+        <div id="payRow" class="hidden"><div class="mt-1 flex items-baseline justify-between"><dt id="payLbl">Deposit to pay now</dt><dd><strong id="payNow" class="font-display text-[1.2rem]">KES 0</strong></dd></div></div>
+        <div class="mt-3 flex items-baseline justify-between rounded-lg bg-white p-3 text-muted"><dt>Delivery fee (pay rider)</dt><dd id="feeTxt">KES 0</dd></div>
+      </dl>
+      <label class="mt-3 flex items-center gap-2 text-sm text-muted"><input type="checkbox" id="remember" checked class="size-4"> Save my details on this phone</label>
+      <p id="status" role="status" class="mt-2 text-sm text-board"></p>
+      <p id="error" role="alert" class="mt-3 min-h-[1.2em] text-[.95rem] font-semibold text-brand-dark"></p>
+      <button id="send" type="button" class="btn mt-2 w-full hover:animate-none">Confirm order on WhatsApp</button>
+      <p id="payNote" class="mt-2.5 text-sm text-muted"></p>
+      <p id="fallback" hidden class="mt-2.5 text-sm text-muted">WhatsApp did not open? <a id="fbLink" class="text-brand-dark underline" href="#">Tap here to open it</a> or <button type="button" id="copyBtn" class="cursor-pointer text-brand-dark underline">copy your order</button> and paste it into a chat with us.</p>
+    </div>
+  </div>
+</div></div>
+
+<section class="py-12" aria-labelledby="cuts-heading"><div class="wrap cuts-layout">
+  <div>  <h2 id="cuts-heading" class="h2">Find your cut</h2><p class="mt-3 text-muted">Not sure what to choose? Tell us your dish in the order notes.</p></div>
+  <img src="Wole_Beef_Carcass.webp" alt="Beef carcass diagram showing the round, loin, rib, chuck, brisket, plate and flank cuts" width="712" height="1009" loading="lazy" decoding="async" class="mx-auto rounded-xl cuts-image">
+</div></section>
+
+<section class="py-12"><div class="wrap">
+  <h2 class="h2">Our promise</h2>
+  <div class="mt-6 grid gap-6 md:grid-cols-2 md:gap-x-9">
+    <div><h3 class="text-lg font-medium">Cut date on every pack</h3></div>
+    <div><h3 class="text-lg font-medium">Something wrong? Tell us the same day.</h3><p class="mt-1.5 text-muted">We’ll replace it.</p></div>
+  </div>
+  <div class="mt-8"><a id="share" class="btn btn-ghost" href="#">Share with a neighbour on WhatsApp</a></div>
+</div></section>
+</main>
+<footer class="border-t border-line pb-10 pt-7 text-[.95rem] text-muted"><div class="wrap">Nyama Fresh &middot; Delivering in Kikuyu for now.</div></footer>
+<div id="bar" class="fixed inset-x-0 bottom-0 z-20 flex translate-y-[110%] items-center justify-between gap-3 border-t border-line bg-paper px-4 pt-2.5 pb-[calc(10px+env(safe-area-inset-bottom,0px))] transition-transform md:hidden">
+  <div class="leading-tight"><small class="block text-xs text-muted">Estimated total</small><strong id="barTotal" class="font-display text-xl">KES 0</strong></div>
+  <button id="barBtn" type="button" class="btn hover:animate-none">Choose items</button>
+</div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
